@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="shortcut icon" type="image/x-icon" href="https://image.ibb.co/fOur3b/favicon.png"/>
+    <link rel="stylesheet" href="{% static 'styles/dashboard.css' %}"/>
+    <meta name="theme-color" content="#1885ed"/>
+    <title>Scan your resume</title>
+  </head>
+{% if messages %}
+    <ul class="messages">
+      {% for message in messages %}
+      <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+      {% endfor %}
+    </ul>
+{% endif %}
+<!-- <div> -->
+<!--     <h2>Basic info</h2> -->
+<!--     <p>name:<span>{{ yourName }}</span></p> -->
+<!--     <p>email:<span>{{ yourEmail }}</span></p> -->
+<!-- </div> -->
+<!-- <div> -->
+<!--     <div> -->
+<!--         <p>Your skills</p> -->
+<!--     </div> -->
+<!--     <div class="container"> -->
+<!--         <ul class="tags"> -->
+<!--             {% for skilll in yourSkills %} -->
+<!--                 <li><button class="">#{{skilll}}</button></li> -->
+<!--             {% endfor %} -->
+<!--         </ul> -->
+<!--     </div> -->
+<!-- </div> -->
+<!-- <div> -->
+<!--     <div> -->
+<!--         <p>Recommended skills for you</p> -->
+<!--     </div> -->
+<!--     <div class="container"> -->
+<!--         <ul class="tags"> -->
+<!--             {% for skill in skillstoadd %} -->
+<!--                 <li><button class="">#{{skill}}</button></li> -->
+<!--             {% endfor %} -->
+<!--         </ul> -->
+<!--     </div> -->
+<!-- </div> -->
+<!--  -->
+<!--    -->
+<!-- <div> -->
+<!--     <h2>Resume tips and ideas</h2> -->
+<!-- </div> -->
+  
+<body>
+    <header class="header">
+        <div class="container header__container">
+            <div class="header__logo"><img class="header__img" src="https://image.ibb.co/kcVou6/path3000.png"> <h1 class="header__title">Bricks<span class="header__light">.io</span></h1></div>       
+            <div class="header__menu">
+              <nav id="navbar" class="header__nav collapse">
+                <ul class="header__elenco">
+                  <li class="header__el"><a href="#" class="header__link">Home</a></li>
+                  <li class="header__el"><a href="#" class="header__link">Pricing</a></li>
+                  <li class="header__el"><a href="#" class="header__link">Success stories</a></li>
+                  <li class="header__el"><a href="#" class="header__link">Blog</a></li>
+                  <li class="header__el"><a href="#" class="header__link">Contact us</a></li>
+                  {% if request.user.is_authenticated %}
+                    <li class="header__el header__el--blue"><a href="{% url 'logout' %}" class="btn btn--white">Log out →</a></li>
+                  {% else %}
+                    <li class="header__el header__el--blue"><a href="{% url 'login' %}" class="btn btn--white">Sign In →</a></li>
+                  {% endif %}
+                </ul>
+              </nav>
+            </div>
+        </div>
+    </header>
+    <div class="app-container">
+        <div class="app-header">
+        </div>
+        <div class="app-content">
+          <div class="app-sidebar">
+          </div>
+          <div class="projects-section">
+            <div class="searchability-section">
+              <div class="searchability-top">
+                <span class="tag">Searchability</span>
+                <h2 class="title">Never miss your on important information</h2>
+                <p class="info">
+                  Application Tracking Syatem(ATS) are computers that process your resume to understand your work history and relevance to the job description.
+                  These findings typically include your work history, job titles, relevant skills and education, as well as contact information like your name, phone number, and email address. 
+                </p>
+                <p><strong>Tip</strong>
+                  "Complete all checks to ensure your resume is easily searchable by recruiters and ATS"
+                </p>
+              </div>
+              <div class="serchability-findings">
+                <div class="findings-wrapper">
+                  <div class="tip-title1">
+                    <span class="finding-title1">ATS tip</span>
+                  </div>
+                  <div class="tip1-content">
+                    <div class="tip1-content-row">
+                      <div class="checkicon-fail">
+                        <div class="fail-icon">
+                          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                          </svg>
+                        </div>
+                      </div>
+                      <div class="description">
+                        <p>
+                          Adding this job's company name and web address can help us provide you ATS-specific tips.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="findings-wrapper">
+                  <div class="tip-title1">
+                    <span class="finding-title1">ATS tip</span>
+                  </div>
+                  <div class="tip1-content">
+                    <div class="tip1-content-row">
+                      <div class="checkicon-fail">
+                        <div class="fail-icon">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                            <path fill="none" d="M0 0h24v24H0z" />
+                            <path d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z" fill="currentColor" />
+                          </svg>
+                        </div>
+                      </div>
+                      <div class="description">
+                        <p>
+                          Adding this job's company name and web address can help us provide you ATS-specific tips.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="findings-wrapper">
+                  <div class="tip-title1">
+                    <span class="finding-title1">ATS tip</span>
+                  </div>
+                  <div class="tip1-content">
+                    <div class="tip1-content-row">
+                      <div class="checkicon-fail">
+                        <div class="fail-icon">
+                          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                          </svg>
+                        </div>
+                      </div>
+                      <div class="description">
+                        <p>
+                          Adding this job's company name and web address can help us provide you ATS-specific tips.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="findings-wrapper">
+                  <div class="tip-title1">
+                    <span class="finding-title1">ATS tip</span>
+                  </div>
+                  <div class="tip1-content">
+                    <div class="tip1-content-row">
+                      <div class="checkicon-fail">
+                        <div class="fail-icon">
+                          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                          </svg>
+                        </div>
+                      </div>
+                      <div class="description">
+                        <p>
+                          Adding this job's company name and web address can help us provide you ATS-specific tips.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="searchability-section part2">
+              <div class="searchability-top">
+                <span class="tag1">Skills</span>
+                <h2 class="title">Never miss your important Skills</h2>
+                <p class="info">
+                  Hard skills enable you to perform job-specific duties and responsibilities. 
+                  You can learn hard skills in the classroom, training courses, and on the job. 
+                  These skills are typically focused on teachable tasks and measurable abilities such as the use of tools, 
+                  equipment, or software. Hard skills have a high impact on your match score. 
+                </p>
+                <p><strong>Tip</strong>
+                  "Match the skills in your resume to the exact spelling in the job description. Prioritize skills that appear most frequently in the job description."
+                </p>
+              </div>
+              <div class="serchability-findings">
+                <ul class="tags">
+                    {% for skilll in yourSkills %}
+                        <li><button class="">#{{skilll}}</button></li>
+                    {% endfor %}
+                </ul>
+                <p>skills to add</p>
+                <ul class="tags">
+                    {% for skill in skillstoadd %}
+                        <li><button class="">#{{skill}}</button></li>
+                    {% endfor %}
+                </ul>
+              </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+    </div>
+</body>

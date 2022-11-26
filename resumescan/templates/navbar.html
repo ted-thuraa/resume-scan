@@ -1,0 +1,42 @@
+{% load static %}
+
+<nav class="nav nav-3">
+  <a class="nav-logo" href="/">LOGO</a>
+  <ul class="nav-list">
+    <li>
+      <a href="/">Dashboard</a>
+    </li>
+    <li>
+      <a href="/">Resumes</a>
+    </li>
+    <li>
+      <a href="/">contact us</a>
+    </li>
+  </ul>
+  {% if request.user.is_authenticated %}
+  <p>Hello {{request.user}}</p>
+  <a href="{% url 'logout' %}">
+    <button class="nav-btn">Logout</button>
+  </a>
+  {% else %}
+  <a href="{% url 'login' %}">
+    <button class="nav-btn">Login</button>
+  </a>
+  {% endif %}
+</nav>
+
+
+
+<!--<a href="/">
+        <h1>logo</h1>
+    </a>
+
+    {% if request.user.is_authenticated %}
+    <p>Hello {{request.user}}</p>
+       <a href="{% url 'logout' %}">logou-t</a>
+    {% else %}
+        <a href="{% url 'login' %}">login</a>
+    {% endif %}
+
+    <hr>
+-->
