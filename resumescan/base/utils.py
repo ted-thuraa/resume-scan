@@ -7,7 +7,12 @@ import io,random
 import re
 
 
-keywordsSE = ["full stack", "back end", "javascript", "web design", "css", "php", "apis", "html", "ruby", "mysql", "python", "oracle", "mongodb", "databases", "node.js", "frameworks", "computer science"]
+keywordsSE = [
+    "full stack", "back end", "javascript", "web design", "css", "php", "apis", "html", "ruby", "mysql", "python", "oracle", "mongodb", "databases", "node.js", "frameworks", "computer science", "programming", "coding", "c\+\+", "c#", "code optimizaion", "software design", 
+    "jira", "distributed computing", "technical documentation", "technical", "project management", "agile", "agile", "software development", "git", "angularjs", "sql", "kotlin", "swift", "linux", "aws", "azure", "gcp", "xml", "css", "django", "php", 
+    "laravel", "encryption", "unit testing", "system testing", "accountability", "flask", "problem-solving", "teamwork", "work ethic", "critical thinking", "creativity", "time management", "integration testing", "android", "clean", "scalable code", 
+    "software systems", "debugging code", "debugging", "programming languages", "deploying software", "deploying", "github", "project management", "Postgresql"
+    ]
 
 def handle_uploaded_file(f):
     with open('static/uploads/'+f.name, 'wb+') as destination:
@@ -41,8 +46,8 @@ def getkeyWords(job_description, keywordsSE):
     extracted_keywords = set()
 
     for list_keyword in keywordsSE:
-        keywords = list_keyword.replace("-", " ")
-        for item in keywords.split():
+        keyword = list_keyword.replace("-", " ")
+        for item in keyword.split():
             if re.search(item, job_description, re.IGNORECASE):
                 extracted_keywords.add(list_keyword)
     return extracted_keywords

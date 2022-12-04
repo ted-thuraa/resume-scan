@@ -12,20 +12,15 @@
   <body>
     <header class="header">
       <div class="container header__container">
-      <div class="header__logo"><img class="header__img" src="https://image.ibb.co/kcVou6/path3000.png"> <h1 class="header__title">Bricks<span class="header__light">.io</span></h1></div> 
-         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                  <span class="sr-only">Toggle navigation</span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                </button>
+      <div class="header__logo"><img class="header__img" src="https://image.ibb.co/kcVou6/path3000.png"> <h1 class="header__title">CVscan<span class="header__light"></span></h1></div> 
+         
               
       <div class="header__menu">
         <nav id="navbar" class="header__nav collapse">
           <ul class="header__elenco">
             <li class="header__el"><a href="#" class="header__link">Home</a></li>
-            <li class="header__el"><a href="#" class="header__link">Pricing</a></li>
-            <li class="header__el"><a href="#" class="header__link">Success stories</a></li>
+            <li class="header__el"><a href="#" class="header__link">Resume</a></li>
+            <li class="header__el"><a href="#" class="header__link">Cover letter</a></li>
             <li class="header__el"><a href="#" class="header__link">Blog</a></li>
             <li class="header__el"><a href="#" class="header__link">Contact us</a></li>
             {% if request.user.is_authenticated %}
@@ -57,7 +52,7 @@
         <div class="row">
           <div class="col-md-12">
         <div class="site">
-          <h1 class="site__title">Fast to optimize your resume for job interviews</h1>
+          <h1 class="site__title">Optimize your resume for job interviews</h1>
           <h2 class="site__subtitle">Win interviews like a boss</h2>
           <div class="site__box-link">
             <a class="btn btn--width" href="{% url 'scan' %}">Scan</a>

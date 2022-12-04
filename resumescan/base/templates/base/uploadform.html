@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="{% static 'styles/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'styles/uploadform.css' %}" />
     <title>scan your cv</title>
   </head>
   {% if messages %}
@@ -18,15 +18,36 @@
     {% endif %}
 
   <body>
-    <div>
-        <form class="form" action="" method="POST" enctype="multipart/form-data">
-            {% csrf_token %}
-            <label for="myfile">Select a file:</label>
-            {{ document.as_p }}
+    <!--<div>-->
+    <!--    <form class="form" action="" method="POST" enctype="multipart/form-data">-->
+    <!--        {% csrf_token %}-->
+    <!--        <label for="myfile">Select a file:</label>-->
+    <!--        {{ document.as_p }}-->
+    <!--        -->
+    <!--        <button class="btn btn--main" type="submit">Submit</button>-->
+    <!--    </form>-->
+    <!--</div>-->
+
+    <div class="row">
+      <div class="col-md-12">
+        <form class="form" action="" method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+          <h1> Upload your resume to get started </h1>
+          <fieldset>  
+
+            <legend><span class="number">1</span> fill the following details </legend>
+           {{ document.as_p }}
             
-            <button class="btn btn--main" type="submit">Submit</button>
+          </fieldset>
+         
+          <button type="submit">Scan</button>
+          
         </form>
+      </div>
     </div>
+
+
+
   </body>
 
 </html>
