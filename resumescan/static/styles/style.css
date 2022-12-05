@@ -110,148 +110,7 @@ body{
   color: #8198ae;
 }
 
-.price-box{
-  padding: 0px 25px;  
-}
 
-.price-box__wrap{
-  background-color: #fff;
-  border-radius:6px;
-  box-shadow:  0 4px 8px 0px rgba(0,0,0,0.2); /*0px 22px 20px -10px rgba(0, 0, 0,0.2)*/
-  padding: 35px 35px 40px 35px;
-  text-align:center;
-  transition: all 0.4s;
-  -webkit-transition: all 0.4s;
-  -moz-transition: all 0.4s;
-  -ms-transition: all 0.4s;
-  -o-transition: all 0.4s;
-}
-
-.price-box__img{
-  display: inline-block;
-}
-
-.price-box__img{
-  width:130px;
-  height:130px;
-  border-radius:50%;
-  background-position: center;
-    background-size:cover;
-  background-repeat:no-repeat;
-}
-
-.price-box--purple .price-box__img{
-  background-image: url("https://image.ibb.co/iGjEKG/1.png");
-
-}
-
-.price-box--violet .price-box__img{
-  background-image: url("https://image.ibb.co/iyT8eG/2.png");
-
-}
-
-.price-box--blue .price-box__img{
-  background-image: url("https://preview.ibb.co/nDRpmw/3.png");
-
-}
-
-.price-box__title{
-  font-size:22px;
-  letter-spacing:1px;
-  margin-bottom:4px;
-}
-
-.price-box__people{
-  font-size:12px;
-  color:#8198ae;
-  font-weight: 300;
-  letter-spacing:1px;
-}
-.price-box__discount{
-  font-size: 28px;
-  font-weight: 700;
-  margin-top: 20px;
-  margin-bottom: 0;
-}
-
-.price-box__dollar {
-    font-size: 18px;
-    font-weight: 400;
-    vertical-align: top;
-    margin-right: 4px;
-}
-
-.price-box--purple .price-box__dollar{
-  color: #8a3aff;
-}
-
-.price-box--violet .price-box__dollar{
-  color: #6f79ff;
-}
-
-.price-box--blue .price-box__dollar{
-  color: #3a9fff;
-}
-
-.price-box__discount--light{
-  font-weight: 400;
-  font-size: 20px;
-  margin-left: 3px;
-}
-
-.price-box__price {
-    margin-top: 3px;
-    font-size: 14px;
-    color: #8198ae;
-    letter-spacing: 1px;
-    margin-bottom: 0;
-    font-weight: 300;
-    text-decoration: line-through;
-}
-
-.price-box__feat {
-    margin-top: 30px;
-    font-size: 16px;
-}
-
-.price-box__list {
-    text-align: left;
-    padding-left: 30px;
-    margin: 0;
-    list-style: none;
-}
-
-.price-box__list-el{
-  position: relative;
-  margin-bottom: 8px;
-  font-weight: 300;
-}
-
-.price-box__list-el:before{
-  content: "✓";
-  position: absolute;
-  left: -25px;
-  font-size: 18px;
-  top: -4px;
-}
-
-.price-box--purple .price-box__list-el:before{
-  color: #8a3aff;
-}
-
-.price-box--violet .price-box__list-el:before{
-  color: #6f79ff;
-}
-
-.price-box--blue .price-box__list-el:before{
-  color: #3a9fff;
-}
-
-.price-box__wrap:hover {
-  backface-visibility: hidden;
-  transform: scale(1.05, 1.05);
-  box-shadow: 0px 30px 18px -8px rgba(0, 0, 0,0.1);
-}
 
 .btn{
   background-color:#3a9fff;
@@ -274,9 +133,6 @@ body{
   color: #fff;
 }
 
-.price-box__wrap:hover .btn {
-  box-shadow: 0px 25px 18px -6px rgba(0, 0, 0,0.2);
-}
 
 .btn--revert{
   background-color:transparent;
@@ -353,51 +209,7 @@ body{
   text-align:center;
 
 }
-.carousel-control{
-  opacity:1;
-  background-image:none !important;
-}
 
-.carousel-control.left{
-  left:-100px;
-}
-
-.carousel-control.right{
-  right:-100px;
-}
-
-.carousel-inner{
-  margin-top: -25px;
-}
-.carousel-control__img{
- position: absolute;
-top: 50%;
-margin-top: -90px;
-}
-
-.carousel-control.left .carousel-control__img{
-  left:0;
-}
-
-.carousel-control.right .carousel-control__img{
-  right:0;
-}
-
-.carousel-indicators li{
-  height:12px;
-  width:12px;
-    background-color: #fff;
-    border: 2px solid #8198ae;
-  margin-right:8px;
-}
-
-.carousel-indicators li.active{
-  height:14px;
-  width:14px ;
-    background-color: #fff;
-    border: 3px solid #6f79ff;
-  margin-right:10px;
-}
 .item {
   text-align:left;
   position:relative;
@@ -436,15 +248,7 @@ margin: 50px auto 15px auto;
 
 }
 
-.carousel-indicators {
-    width: auto;
-    margin: 0;
-    right: 68px;
-    text-align: right;
-    top: 72px;
-  left: auto;
-  bottom: auto;
-}
+
 .item__content:after{
 content: "";
 width: 0;
@@ -479,6 +283,10 @@ filter: drop-shadow(0px 7px 4px rgba(0,0,0,.2));
     font-size: 30px;
     margin: 0;
     text-align: center;
+}
+.site__title2 {
+  font-size: 30px;
+  margin: 0;
 }
 
 .site__subtitle{
@@ -573,196 +381,57 @@ filter: drop-shadow(0px 7px 4px rgba(0,0,0,.2));
   opacity:0.9;
 }
 
-.article-pre__col{
-  padding:0 30px;
-  margin-bottom:30px;
-}
-
-.article-pre__img {
-    height: 0;
-    background-position: center;
-    background-size: cover;
-    padding-bottom: 55%;
-    border-radius: 6px;
-  box-shadow: 0 4px 10px 2px rgba(0,0,0,0.3);
-  transition: all 0.4s;
--webkit-transition: all 0.4s;
--moz-transition: all 0.4s;
--ms-transition: all 0.4s;
--o-transition: all 0.4s;
-}
-
-.article-pre__img--first{
-   background-image: url(https://cdn.dribbble.com/users/18730/screenshots/2182635/newshot.png);
-}
-
-.article-pre__img--second{
-  background-image: url(https://image.ibb.co/cYsvbw/dribbble.jpg);  
-}
-
-.article-pre__img--third{
-  background-image: url(https://cdn.dribbble.com/users/103909/screenshots/3671664/sensors-01.jpg);  
-}
-
-.article-pre__img--fourth{
-  background-image: url(https://cdn.dribbble.com/users/997070/screenshots/4120967/attachments/943230/01-1._Cover_Copy_2x.png);  
-}
-
-.article-pre:hover .article-pre__img {
-  box-shadow: 0px 10px 13px 4px rgba(0, 0, 0,0.2);
-}
-
-.article-pre:hover {
-  text-decoration:none;
-}
-.article-pre__info {
-    font-size: 16px;
-    color: #8198ae;
-  margin: 0;
-padding: 25px 25px 0 25px;
-}
-
-.article-pre__date {
-    float: right;
-}
-
-.article-pre__title {
-font-size: 20px;
-color: #1f4568;
-margin: 0;
-padding: 15px 25px;
-}
-
-.article-pre__arrow--purple{
-  color: #8a3aff;
-}
-
-.contacts_title-ag {
-    margin: 0;
-        margin-left: 0px;
-    display: inline-block;
-    vertical-align: middle;
-    font-size: 22px;
-    margin-left: 10px;
-}
-
-.contacts__link{
-  color: #1f4568;
-}
-
-.contacts--light {
-    color: #8198ae;
-}
-
-.contacts__address {
-margin-top: 20px;
-color: #8198ae;
-font-size: 16px;
-line-height: 27px;
-padding-bottom: 12px;
-margin-bottom: 17px;
-  position: relative;
-}
-
-.contacts__address:after{
-  content: '';
-position: absolute;
-width: 20px;
-height: 1px;
-background-color: #8198ae;
-bottom: 0;
-left: 0;
-}
-.contacts__info {
-    color: #8198ae;
-    font-size: 16px;
-    margin-bottom: 2px;
-}
-.contacts__info-link {
-    color: #3a9fff;
-  text-decoration:none;
-}
-
-.form-group {
-    margin-bottom: 20px;
-display: table;
-width: 100%;
-  position:relative;
-}
-
-.form__field {
-    height: 50px;
-  position:relative;
-    border: none;
-    padding: 10px 12px;   
+/* feature section */
+.feature-sect {
   width: 100%;
-  border-radius:6px;
-  appearance: none;
-        -moz-appearance: none;
-        -webkit-appearance: none;
-        -ms-appearance:none;
-        -o-appearance: none;
-  box-shadow: 0 4px 8px 0px rgba(0,0,0,0.2);
-  transition: all 0.4s;
-          -webkit-transition: all 0.4s;
-          -moz-transition: all 0.4s;
-          -ms-transition: all 0.4s;
-          -o-transition: all 0.4s;
-  z-index: 2;
+  padding: 50px 20px;
+  display: block;
 }
 
-.form__select {
-    background-image: url('http://www.austinlawrencepartners.com/wp-content/uploads/arrow-down-gray-hi.png');
-    background-repeat: no-repeat;
-    background-size: 10px;
-    background-position-x: 97%;
-    width: 100%;
-    padding-right: 30px;
-    background-position-y: center;
-    background-color:#fff;
-  color: #8198ae;
+.feature-row {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
 }
-
-.form__field--half{
-  width:50%;
-  float:left;
+.feature-content {
+  display: inline-flex;
+  align-items: center;
+  
 }
-
-.form__field--half:first-of-type{
-  padding-right:15px;
+.feature-image{
+  width: 50%;
+}
+.feature-img {
+  width: 610px;
+  height: 560px;
+}
+.feature-text {
+  left: 50%;
+  width: 50%;
+}
+.feature-text-inner
+.btn-sect {
+  margin-top: 30px;
 }
 
 
-.form__textarea{
-  height:200px;
+/* About sect */
+.about-sect {
+  width: 100%;
+  display: block;
+
+}
+.about-content {
+  padding: 50px 20px;
+}
+.abt-cont {
+  display: block;
+  text-align: center;
+  width: 80%;
+  margin-left: 161px;
 }
 
-.btn--up{
-  position: absolute;
-bottom: -15px;
-right: 25px;
-  z-index: 3;
-}
-
-.career_title {
-    color: #fff;
-    font-size: 28px;
-}
-
-.career_sub {
-    font-size: 22px;
-    color: #c7cbff;
-    margin-top: 0;
-    margin-bottom: 30px;
-}
-
-.career-img {
-    position: absolute;
-    bottom: 0;
-width: 65%;
-z-index: 0;
-left: 20%;
-}
 
 
 .footer{
