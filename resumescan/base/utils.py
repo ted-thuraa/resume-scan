@@ -49,5 +49,5 @@ def getkeyWords(job_description, keywordsSE):
         keyword = list_keyword.replace("-", " ")
         for item in keyword.split():
             if re.search(item, job_description, re.IGNORECASE):
-                extracted_keywords.add(list_keyword)
+                extracted_keywords.add(list_keyword.lower())
     return extracted_keywords

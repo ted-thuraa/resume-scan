@@ -1,43 +1,111 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="{% static 'styles/login_register.css' %}" />
+    <title>scan your cv</title>
+  </head>
+
+<!--{% if page == 'login' %}-->
+<!--{% if messages %}-->
+<!--    <ul class="messages">-->
+<!--      {% for message in messages %}-->
+<!--      <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>-->
+<!--      {% endfor %}-->
+<!--    </ul>-->
+<!--{% endif %}-->
+<!--<div>-->
+<!--    <form method="POST" action="">-->
+<!--        {% csrf_token %}-->
+<!--        <label>Username:</label>-->
+<!--        <input type="text" name="username" placeholder="Enter Username">-->
+<!--        -->
+<!--        <label>Password:</label>-->
+<!--        <input type="password" name="password" placeholder="Enter Password">-->
+<!--        <input type="submit" value="Login">-->
+<!---->
+<!--    </form>-->
+<!--    <p>Haven't signed up yet?</p>-->
+<!--    <a href="{% url 'register' %}">Register</a>-->
+<!--</div>-->
+<!---->
+<!--{% else %}-->
+<!--{% if messages %}-->
+<!--    <ul class="messages">-->
+<!--      {% for message in messages %}-->
+<!--      <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>-->
+<!--      {% endfor %}-->
+<!--    </ul>-->
+<!--{% endif %}-->
+<!--<div>-->
+<!--    <form method="POST" action="">-->
+<!--        {% csrf_token %}-->
+<!--        {{form.as_p}}-->
+<!--        <input type="submit" value="Register">-->
+<!--    </form>-->
+<!--    <p>Already signed up?</p>-->
+<!--    <a href="{% url 'login' %}">Login</a>-->
+<!--</div>-->
+<!--{% endif %}-->
 
 
-{% if page == 'login' %}
-{% if messages %}
-    <ul class="messages">
-      {% for message in messages %}
-      <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-      {% endfor %}
-    </ul>
-{% endif %}
-<div>
-    <form method="POST" action="">
-        {% csrf_token %}
-        <label>Username:</label>
-        <input type="text" name="username" placeholder="Enter Username">
+  <body>
+    {% if page == 'login' %}
+    {% if messages %}
+      <ul class="messages">
+        {% for message in messages %}
+          <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+    <div class="row">
+      <div class="col-md-12">
+        <form class="form" action="" method="post">
+          {% csrf_token %}
+          <h1> Login </h1>
+          <fieldset>
+            <label>Username:</label>
+            <input type="text" name="username" placeholder="Enter Username">
+          
+            <label>Password:</label>
+            <input type="password" name="password" placeholder="Enter Password">
+          </fieldset>
+          <p>Haven't signed up yet? <a href="{% url 'register' %}">Register</a></p>
+          
         
-        <label>Password:</label>
-        <input type="password" name="password" placeholder="Enter Password">
-        <input type="submit" value="Login">
+          <button type="submit">Login</button>
 
-    </form>
-    <p>Haven't signed up yet?</p>
-    <a href="{% url 'register' %}">Register</a>
-</div>
+        </form>
+      </div>
+    </div>
+    {% else %}
+    {% if messages %}
+      <ul class="messages">
+        {% for message in messages %}
+          <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+    <div class="row">
+      <div class="col-md-12">
+        <form class="form" action="" method="post">
+          {% csrf_token %}
+          <h1> Sign up </h1>
+          <fieldset>
+            {{form.as_p}}
+          </fieldset>
+          <p>Already signed up? <a href="{% url 'login' %}">Login</a></p>
+          
+        
+          <button type="submit">Sign up</button>
 
-{% else %}
-{% if messages %}
-    <ul class="messages">
-      {% for message in messages %}
-      <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-      {% endfor %}
-    </ul>
-{% endif %}
-<div>
-    <form method="POST" action="">
-        {% csrf_token %}
-        {{form.as_p}}
-        <input type="submit" value="Register">
-    </form>
-    <p>Already signed up?</p>
-    <a href="{% url 'login' %}">Login</a>
-</div>
-{% endif %}
+        </form>
+      </div>
+    </div>
+    {% endif %}
+  </body>
+</html>

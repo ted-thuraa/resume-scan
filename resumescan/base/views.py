@@ -70,7 +70,7 @@ def scan(request):
     if request.method == 'POST':
         document = CvUploadsform(request.POST, request.FILES)
         if document.is_valid():
-            #job_description = request.POST.get('job_description')
+            #uploaded file into the uploads folder
             handle_uploaded_file(request.FILES['file'])
            #Cvuploads.objects.create(
            #    user = request.user,
@@ -94,6 +94,7 @@ def analyseResume(request, pk):
     
     pdf_path = resume_Doc.file.path
     if resume_Doc:
+        #if cv exist get its content
         resume_Data = ResumeParser(pdf_path).get_extracted_data()
         if resume_Data:
             resume_Text = pdf_reader(pdf_path)
@@ -103,17 +104,20 @@ def analyseResume(request, pk):
                 yourEmail = resume_Data['email']
                 yourContact = resume_Data['mobile_number']
                 yourSkills = resume_Data['skills']
+                yourEducation = resume_Data['college_name']
             except:
                 pass
-            se_keyword = ['javascript','communication skills', 'rest', 'apis', 'git', 'aws', 'python', 'sql', 'css', 'software development', 'php', 'html5', 'devops', 'docker', 'linux', 'problem solving', 'quality assuarance']
+
             recommended_skills = []
             resume_Data_lower = []
 
             # job description keyword checking
             job_description = resume_Doc.job_description
+            
+            #returns potential keywords in the job description
             jobkeywords = getkeyWords(job_description, keywordsSE)
 
-            #job_decription_handler(job_description)
+            
             for i in resume_Data['skills']:
                 list_item = i.lower()
                 resume_Data_lower.append(list_item)
@@ -125,7 +129,7 @@ def analyseResume(request, pk):
             skillstoadd = recommended_skills
             resume_Data_lower = []
             recommended_skills = []
-            context = {'yourName':yourName, 'yourEmail':yourEmail, 'yourSkills':yourSkills, 'skillstoadd':skillstoadd }
+            context = {'yourName':yourName, 'yourEmail':yourEmail, 'yourSkills':yourSkills, 'yourEducation':yourEducation,'skillstoadd':skillstoadd }
             return render(request, 'base/cvDetails.html', context)
 
         else:

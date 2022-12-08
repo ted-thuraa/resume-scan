@@ -24,8 +24,8 @@
             <div class="header__menu">
               <nav id="navbar" class="header__nav collapse">
                 <ul class="header__elenco">
-                  <li class="header__el"><a href="#" class="header__link">Home</a></li>
-                  <li class="header__el"><a href="#" class="header__link">Resume</a></li>
+                  <li class="header__el"><a href="{% url 'home' %}" class="header__link">Home</a></li>
+                  <li class="header__el"><a href="{% url 'scan' %}" class="header__link">Scan resume</a></li>
                   <li class="header__el"><a href="#" class="header__link">Blog</a></li>
                   <li class="header__el"><a href="#" class="header__link">Contact us</a></li>
                   {% if request.user.is_authenticated %}
@@ -74,7 +74,7 @@
                       </div>
                       <div class="description">
                         <p>
-                          Adding this job's company name and web address can help us provide you ATS-specific tips.
+                          make sure the following are ticked.
                         </p>
                       </div>
                     </div>
@@ -104,16 +104,14 @@
                     {% else %}
                       <div class="tip1-content-row">
                         <div class="checkicon-fail">
-                          <div class="fail-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                              <path fill="none" d="M0 0h24v24H0z" />
-                              <path d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z" fill="currentColor" />
-                            </svg>
+                          <div class="correct-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+
                           </div>
                         </div>
                         <div class="description">
                           <p>
-                            we didnt find your name anywhere.
+                            we didnt find your name, consinder adding it.
                           </p>
                         </div>
                       </div>
@@ -137,11 +135,9 @@
                     {% else %}
                       <div class="tip1-content-row emailSec">
                         <div class="checkicon-fail">
-                          <div class="fail-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                              <path fill="none" d="M0 0h24v24H0z" />
-                              <path d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z" fill="currentColor" />
-                            </svg>
+                          <div class="correct-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+
                           </div>
                         </div>
                         <div class="description">
@@ -158,6 +154,7 @@
                     <span class="finding-title1">Education</span>
                   </div>
                   <div class="tip1-content">
+                    {% if yourEducation is not None %}
                     <div class="tip1-content-row">
                       <div class="checkicon-fail">
                         <div class="fail-icon">
@@ -168,10 +165,25 @@
                       </div>
                       <div class="description">
                         <p>
-                          Adding this job's company name and web address can help us provide you ATS-specific tips.
+                          Nice job, found {{ yourEducation }} where you did your education.
                         </p>
                       </div>
                     </div>
+                    {% else %}
+                    <div class="tip1-content-row">
+                      <div class="checkicon-fail">
+                        <div class="correct-icon">
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+
+                        </div>
+                      </div>
+                      <div class="description">
+                        <p>
+                          please fill your education section
+                        </p>
+                      </div>
+                    </div>
+                    {% endif %}
                   </div>
                 </div>
                 <div class="findings-wrapper">
@@ -182,9 +194,8 @@
                     <div class="tip1-content-row">
                       <div class="checkicon-fail">
                         <div class="fail-icon">
-                          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                          </svg>
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+
                         </div>
                       </div>
                       <div class="description">

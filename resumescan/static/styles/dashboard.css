@@ -23,6 +23,7 @@
   --search-area-bg: #fff;
   --star: #1ff1c2e;
   --message-btn: #fff;
+  --correct-icon: rgb(247, 18, 18);
 
 
   /* Basic */
@@ -300,6 +301,16 @@ left, right {
 }
 .fail-icon {
   background-color: var(--c-java);
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--c-white);
+	border-radius: 50%;
+	width: 20px;
+	height: 20px;
+}
+.correct-icon {
+  background-color: var(--correct-icon);
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
